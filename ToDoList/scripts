@@ -1,0 +1,55 @@
+let add = document.querySelector('#add');
+let list = document.querySelector('#list');
+const msgDisplay = document.getElementById("message");
+
+add.addEventListener("keyup", function(event){
+    if(event.key == "Enter"){
+        addItem(this.value)
+        this.value = ""
+    }
+})
+
+
+let addItem = (add) => {
+    let listItem = document.createElement("li");
+    listItem.innerHTML = `${add}<i></i>`;
+
+
+        listItem.addEventListener("click", function(){
+           this.classList.toggle('done');
+
+           msgDisplay.innerText = "Wooooww ..\n\nTask was Done...!  \n\n  Keep Growing...!";
+           msgDisplay.style.display = "block";
+
+
+            setTimeout(() => {
+                msgDisplay.style.display = "none";
+            }, 3000);
+        })
+                
+            
+        listItem.querySelector("i").addEventListener("click", function(event){
+            event.stopPropagation();//prevents from reaching parent li
+             listItem.remove();
+
+            msgDisplay.innerText = "OHH ..! \n\nTask was removed.";
+            msgDisplay.style.display = "block";
+
+            setTimeout(() => {
+                msgDisplay.style.display = "none";
+            }, 3000);
+
+        })
+            
+        list.appendChild(listItem);
+
+
+        // Display the  message when task added
+        msgDisplay.innerText = "Hey Yasasri..\n\n It's a New Task....!\n\n Keep  Going.........";
+        msgDisplay.style.display = "block";
+
+        // Hide the message after a few seconds
+        setTimeout(() => {
+            msgDisplay.style.display = "none";
+        }, 3000);
+}

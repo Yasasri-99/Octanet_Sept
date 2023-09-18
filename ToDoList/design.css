@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    width: 100vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://img.freepik.com/free-vector/futuristic-technology-background_52683-35442.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gallery{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.box{
+    position: relative;
+    width: 450px;
+    height: 550px;
+    /* background: #168af78c; */
+    background: linear-gradient(#5db8e9d1,#4190f0ce, #0b45f489);
+    padding: 30px 50px;
+    margin-top: 80px;
+    /* box-shadow: rgba(159, 204, 244, 0.48) 6px 2px 16px 0px, rgba(214, 239, 255, 0.8) -6px -2px 16px 0px; */
+    /* box-shadow: rgb(241, 241, 245) 0px 5px 15px; */
+    box-shadow: rgba(255, 255, 255, 0.863) 0px 5px 15px;
+}
+#message {
+    font-size: 30px;
+    display: none; 
+    position: absolute;
+    padding: 100px;
+    margin-left: 550px;
+    color: white;
+    /* flex-wrap: nowrap; */
+    /* margin: 0 -100px; */
+}
+.box h1{
+    width: 100%;
+    padding-bottom: 25px;
+    font-weight: bolder;
+    text-align: center;
+    color: black;
+    margin-bottom: 10px;
+}
+#add{
+    position: relative;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 18px;
+    color: #2f363e;
+    border: 2px solid black;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+#add::placeholder{
+    color: #0a0202;
+}
+.box li{
+    position: relative;
+    width: calc(100% - 40px);
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    background: #78798edd;
+    margin: 15px 0;
+    padding: 10px 10px 10px 45px;
+    min-height: 35px;
+    cursor: pointer;
+    /* border-radius: 20px; */
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 6px 4px, rgba(0, 0, 0, 0.09) 0px 10px 6px;
+}
+
+.box li i{
+    position: absolute;
+    right: -40px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e80202;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    /* box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px; */
+}
+
+.box li i::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.box li i::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(-45deg);
+}
+
+.box li::before{
+    content: '';
+    position: absolute;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    background: #14b92a;
+    border-radius: 10%;
+}
+
+.box li.done{
+    background: #47eda3ab;
+}
+
+.box li.done::after{
+    content: '';
+    position: absolute;
+    left: 12px;
+    bottom: 19px;
+    width: 12px;
+    height: 6px;
+    border-bottom: 2px solid #fff;
+    border-left: 2px solid #fff;
+    transform: rotate(315deg);
+}
+
+#list{
+    position: relative;
+    margin-top: 20px;
+    height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #fff;
+}
